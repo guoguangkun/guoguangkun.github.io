@@ -1,21 +1,23 @@
 # Site settings
-title: welcome to my space
-email: guoguangkun1024@gmail.com
+title: Your awesome title
+email: your-email@domain.com
 description: > # this means to ignore newlines until "baseurl:"
-  A front end developer,即使眼前的是狂风暴雨，但是远处的海平面依旧是风平浪静。
-baseurl: "/blog/" # the subpath of your site, e.g. /blog/
-url: "https://guoguangkun.github.io" # the base hostname & protocol for your site
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://yourdomain.com" # the base hostname & protocol for your site
 
 
 # Sidebar filter
 # Choose 'tag' or 'category' as filter in sidebar.
-filter: 'category'
+filter: 'tag'
 
 
 # Social account
 # twitter:  username
 # weibo:    ID
- github:   guoguangkun
+# github:   username
 # codepen:  username
 # dribbble: username
 
