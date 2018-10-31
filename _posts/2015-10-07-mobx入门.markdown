@@ -1,7 +1,7 @@
 ---
 title : mobx入门
 layout: post
-date:   2015-09-11 22:21:49
+date:   2015-09-11 20:30:43
 categories: 技术文章
 ---
 是类似于vuex，redux，flux的状态管理工具
