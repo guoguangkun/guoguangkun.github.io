@@ -1,11 +1,11 @@
 
 ---
 
-layout: post
-title:  "New way to study!"
-date:   2015-09-11 22:21:49
-categories: thoughts
-tags: thoughts
+layout: post,
+title:  "New way to study!",
+date:   2015-09-11 22:21:49,
+categories: thoughts,
+tags: thoughts,
 
 ---
 
