@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8da590b8-7d29-4619-b1e7-cbda33c06d73" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/_posts/2015-03-08-welcome-to-jekyll.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2015-03-08-welcome-to-jekyll.markdown" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2015-03-08-welcome-to-jekyll.markdown" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/_posts/2015-09-11-newstudyway.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2015-09-11-newstudyway.markdown" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2015-10-07-mobx入门.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2015-10-07-mobx入门.markdown" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,30 +31,20 @@
         <entry file="file://$PROJECT_DIR$/_posts/2015-09-11-newstudyway.markdown">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="75">
-                <caret line="5" column="14" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+              <first_editor relative-caret-position="45">
+                <caret line="3" selection-start-line="3" selection-end-line="4" selection-end-column="16" />
               </first_editor>
               <second_editor />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2015-10-07-mobx入门.markdown" pinned="false" current-in-tab="false">
+      <file leaf-file-name="2015-10-07-mobx入门.markdown" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_posts/2015-10-07-mobx入门.markdown">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor />
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2015-03-08-welcome-to-jekyll.markdown" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/_posts/2015-03-08-welcome-to-jekyll.markdown">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="75">
-                <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+              <first_editor relative-caret-position="45">
+                <caret line="3" column="27" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
               </first_editor>
               <second_editor />
             </state>
@@ -68,9 +59,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/_posts/2015-10-07-mobx入门.markdown" />
-        <option value="$PROJECT_DIR$/_posts/2015-09-11-newstudyway.markdown" />
         <option value="$PROJECT_DIR$/_posts/2015-03-08-welcome-to-jekyll.markdown" />
+        <option value="$PROJECT_DIR$/_posts/2015-09-11-newstudyway.markdown" />
+        <option value="$PROJECT_DIR$/_posts/2015-10-07-mobx入门.markdown" />
       </list>
     </option>
   </component>
@@ -140,12 +131,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1540987451460</updated>
-      <workItem from="1540987452634" duration="627000" />
+      <workItem from="1540987452634" duration="764000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="627000" />
+    <option name="totallyTimeSpent" value="764000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="822" extended-state="6" />
@@ -184,10 +175,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2015-10-07-mobx入门.markdown">
+    <entry file="file://$PROJECT_DIR$/_posts/2015-03-08-welcome-to-jekyll.markdown">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor />
+          <first_editor relative-caret-position="195">
+            <caret line="13" column="20" lean-forward="true" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+          </first_editor>
           <second_editor />
         </state>
       </provider>
@@ -195,18 +188,18 @@
     <entry file="file://$PROJECT_DIR$/_posts/2015-09-11-newstudyway.markdown">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="75">
-            <caret line="5" column="14" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+          <first_editor relative-caret-position="45">
+            <caret line="3" selection-start-line="3" selection-end-line="4" selection-end-column="16" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2015-03-08-welcome-to-jekyll.markdown">
+    <entry file="file://$PROJECT_DIR$/_posts/2015-10-07-mobx入门.markdown">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="75">
-            <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+          <first_editor relative-caret-position="45">
+            <caret line="3" column="27" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
           </first_editor>
           <second_editor />
         </state>
