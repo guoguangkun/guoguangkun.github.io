@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8da590b8-7d29-4619-b1e7-cbda33c06d73" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/_posts/2015-10-20-让青春继续读书笔记.markdown" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2015-10-07-mobx入门.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2015-10-07-mobx入门.markdown" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_posts/2015-11-10-追寻生命的意义.markdown" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -51,12 +49,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2015-10-20-让青春继续读书笔记.markdown" pinned="false" current-in-tab="true">
+      <file leaf-file-name="2015-10-20-让青春继续读书笔记.markdown" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_posts/2015-10-20-让青春继续读书笔记.markdown">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="210">
-                <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+              <first_editor>
+                <caret selection-end-line="5" selection-end-column="3" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2015-11-10-追寻生命的意义.markdown" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/_posts/2015-11-10-追寻生命的意义.markdown">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="45">
+                <caret line="3" column="27" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
               </first_editor>
               <second_editor />
             </state>
@@ -75,6 +85,7 @@
         <option value="$PROJECT_DIR$/_posts/2015-09-11-newstudyway.markdown" />
         <option value="$PROJECT_DIR$/_posts/2015-10-07-mobx入门.markdown" />
         <option value="$PROJECT_DIR$/_posts/2015-10-20-读书笔记.markdown" />
+        <option value="$PROJECT_DIR$/_posts/2015-11-10-追寻生命的意义.markdown" />
       </list>
     </option>
   </component>
@@ -149,12 +160,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1540987451460</updated>
-      <workItem from="1540987452634" duration="1171000" />
+      <workItem from="1540987452634" duration="1384000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1171000" />
+    <option name="totallyTimeSpent" value="1384000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="822" extended-state="6" />
@@ -226,8 +237,18 @@
     <entry file="file://$PROJECT_DIR$/_posts/2015-10-20-让青春继续读书笔记.markdown">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="210">
-            <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          <first_editor>
+            <caret selection-end-line="5" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2015-11-10-追寻生命的意义.markdown">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="45">
+            <caret line="3" column="27" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
           </first_editor>
           <second_editor />
         </state>
