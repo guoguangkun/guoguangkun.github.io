@@ -1,0 +1,1253 @@
+---
+title : vue和react项目中引入echart并快速配置
+layout: post
+date:   2017-05-11 
+categories: 技术文章
+---
+
+echatrs是百度出品的一套数据可视化图表地图库，涵盖了几乎所有的图表类型，使用简单上手快，开发周期短的时候可以快速的产出各种图表
+
+1 如何在vue项目中引入echarts ？
+
+首先
+
+需要下载echart和echart在vue项目中的支持 插件   [https://github.com/xlsdg/vue-echarts-v3](https://github.com/xlsdg/vue-echarts-v3)    
+
+react重的vue插件： [https://github.com/hustcc/echarts-for-react](https://github.com/hustcc/echarts-for-react)
+
+## 具体操作如下：
+
+> for vue
+### Installation 安装
+
+```
+$ npm install --save echarts vue-echarts-v3
+```
+
+### Change webpack config 修改配置文件  进行适配
+
+
+For webpack 1.x:
+```
+
+  {
+
+        test: /\.js$/,
+
+        loader: 'babel',
+
+        include: [
+
+-          path.join(prjRoot, 'src')
+
++          path.join(prjRoot, 'src'),
+
++          path.join(prjRoot, 'node_modules/vue-echarts-v3/src')
+
+        ],
+
+-        exclude: /node_modules/
+
++        exclude: /node_modules(?![\\/]vue-echarts-v3[\\/]src[\\/])/
+
+      },
+```
+
+    
+
+For webpack 2.x+:
+```
+   {
+
+        test: /\.js$/,
+
+        loader: 'babel-loader',
+
+-       include: [resolve('src'), resolve('test')]
+
++       include: [resolve('src'), resolve('test'), resolve('node_modules/vue-echarts-v3/src')]
+
+      }
+```
+   
+### 引入组件  
+
+```
+//Import all charts and components 完整引入
+
+import IEcharts from 'vue-echarts-v3/src/full.js';
+
+//Import ECharts.js modules manually to reduce bundle size 按需引入，减小打包体积
+
+import IEcharts from 'vue-echarts-v3/src/lite.js';
+
+// import 'echarts/lib/chart/line';
+
+import 'echarts/lib/chart/bar';
+
+// import 'echarts/lib/chart/pie';
+
+// import 'echarts/lib/chart/scatter';
+
+// import 'echarts/lib/chart/radar';
+
+// import 'echarts/lib/chart/map';
+
+// import 'echarts/lib/chart/treemap';
+
+// import 'echarts/lib/chart/graph';
+
+// import 'echarts/lib/chart/gauge';
+
+// import 'echarts/lib/chart/funnel';
+
+// import 'echarts/lib/chart/parallel';
+
+// import 'echarts/lib/chart/sankey';
+
+// import 'echarts/lib/chart/boxplot';
+
+// import 'echarts/lib/chart/candlestick';
+
+// import 'echarts/lib/chart/effectScatter';
+
+// import 'echarts/lib/chart/lines';
+
+// import 'echarts/lib/chart/heatmap';
+
+// import 'echarts/lib/component/graphic';
+
+// import 'echarts/lib/component/grid';
+
+// import 'echarts/lib/component/legend';
+
+// import 'echarts/lib/component/tooltip';
+
+// import 'echarts/lib/component/polar';
+
+// import 'echarts/lib/component/geo';
+
+// import 'echarts/lib/component/parallel';
+
+// import 'echarts/lib/component/singleAxis';
+
+// import 'echarts/lib/component/brush';
+
+import 'echarts/lib/component/title';
+
+// import 'echarts/lib/component/dataZoom';
+
+// import 'echarts/lib/component/visualMap';
+
+// import 'echarts/lib/component/markPoint';
+
+// import 'echarts/lib/component/markLine';
+
+// import 'echarts/lib/component/markArea';
+
+// import 'echarts/lib/component/timeline';
+
+// import 'echarts/lib/component/toolbox';
+
+// import 'zrender/lib/vml/vml';
+
+```
+### 在组件中使用： Using the component
+
+```
+<template>
+
+  <div class="echarts">
+
+    <IEcharts
+
+      :option="bar"
+
+      :loading="loading"
+
+      @ready="onReady"
+
+      @click="onClick"
+
+    />
+
+    <button @click="doRandom">Random</button>
+
+  </div>
+
+</template>
+
+<script type="text/babel">
+
+  import IEcharts from 'vue-echarts-v3/src/full.js';
+
+  export default {
+
+    name: 'view',
+
+    components: {
+
+      IEcharts
+
+    },
+
+    props: {
+
+    },
+
+    data: () => ({
+
+      loading: true,
+
+      bar: {
+
+        title: {
+
+          text: 'ECharts Hello World'
+
+        },
+
+        tooltip: {},
+
+        xAxis: {
+
+          data: ['Shirt', 'Sweater', 'Chiffon Shirt', 'Pants', 'High Heels', 'Socks']
+
+        },
+
+        yAxis: {},
+
+        series: [{
+
+          name: 'Sales',
+
+          type: 'bar',
+
+          data: [5, 20, 36, 10, 10, 20]
+
+        }]
+
+      }
+
+    }),
+
+    methods: {
+
+      doRandom() {
+
+        const that = this;
+
+        let data = [];
+
+        for (let i = 0, min = 5, max = 99; i < 6; i++) {
+
+          data.push(Math.floor(Math.random() * (max + 1 - min) + min));
+
+        }
+
+        that.loading = !that.loading;
+
+        that.bar.series[0].data = data;
+
+      },
+
+      onReady(instance, ECharts) {
+
+        console.log(instance, ECharts);
+
+      },
+
+      onClick(event, instance, ECharts) {
+
+        console.log(arguments);
+
+      }
+
+    }
+
+  };
+
+</script>
+
+<style scoped>
+
+  .echarts {
+
+    width: 400px;
+
+    height: 400px;
+
+  }
+
+</style>
+
+
+```
+
+
+### 在vue中配合jsx使用的示例：
+
+```
+import IEcharts from 'vue-echarts-v3/src/lite.js';
+
+import 'echarts/lib/chart/bar';
+
+import './Barchart.less'
+
+export default {
+
+  name: 'BarChart',
+
+  data() {
+
+    return {
+
+      loading: false,
+
+      options: {
+
+        title: {
+
+          text: 'ECharts Hello World'
+
+        },
+
+        tooltip: {},
+
+        xAxis: {
+
+          data: ['Shirt', 'Sweater', 'Chiffon Shirt', 'Pants', 'High Heels', 'Socks']
+
+        },
+
+        yAxis: {
+
+        },
+
+        series: [{
+
+          name: 'SalesC',
+
+          type: 'bar',
+
+          data: [5, {
+
+              value : 56,
+
+              //自定义标签样式，仅对该数据项有效
+
+              label: {},
+
+              //自定义特殊 itemStyle，仅对该数据项有效
+
+              itemStyle:{
+
+                color:'#3F92D8',
+
+                normal:{
+
+                  color: {
+
+                    type: 'linear',
+
+                    x: 0,
+
+                    y: 0,
+
+                    x2: 1,
+
+                    y2: 1,
+
+                    colorStops: [{
+
+                      offset: 0, color: '#5793f3' // 0% 处的颜色
+
+                    }, {
+
+                      offset: 1, color: '#53C1A9' // 100% 处的颜色
+
+                    }],
+
+                    globalCoord: false // 缺省为 false
+
+                  }  //连线颜色
+
+                },
+
+                emphasis:{
+
+                }
+
+              },
+
+              }, 36, 10, 10, 20],
+
+        itemStyle:{
+
+          normal:{
+
+            color:'#53C1A9',
+
+          }
+
+        },
+
+  }],
+
+      }
+
+    };
+
+  },
+
+  methods: {
+
+    doRandom() {
+
+      // const that = this;
+
+      // let data = [];
+
+      // for (let i = 0, min = 5, max = 99; i < 6; i++) {
+
+      //   data.push(Math.floor(Math.random() * (max + 1 - min) + min));
+
+      // }
+
+      this.loading = !this.loading;
+
+      console.log(1);
+
+      //that.bar.series[0].data = data;
+
+    },
+
+    onReady(instance) {
+
+      console.log(instance);
+
+    },
+
+    onClick(event, instance, echarts) {
+
+      console.log(arguments);
+
+    }
+
+  },
+
+  created() {
+
+  },
+
+  updated() {
+
+  },
+
+  beforeMount() {
+
+  },
+
+  components: {
+
+    IEcharts,
+
+  },
+
+  render() {
+
+    return <div>
+
+        <div class="echarts">
+
+          <IEcharts option={this.options} loading={this.loading} OnReady={this.onReady} OnClick={this.onClick}></IEcharts>
+
+        </div>
+
+    </div>;
+
+  },
+
+};
+
+
+```
+
+
+ |
+
+以上就是在vue中简单的配置和使用
+
+> for react
+
+
+### 下载
+
+```
+npm install --save echarts-for-react
+```
+### 引入
+```
+import ReactEcharts from 'echarts-for-react';
+
+import React from 'react';
+
+// import the core library.
+
+import ReactEchartsCore from 'echarts-for-react/lib/core';
+
+// then import echarts modules those you have used manually.
+
+import echarts from 'echarts/lib/echarts';
+
+// import 'echarts/lib/chart/line';
+
+import 'echarts/lib/chart/bar';
+
+// import 'echarts/lib/chart/pie';
+
+// import 'echarts/lib/chart/scatter';
+
+// import 'echarts/lib/chart/radar';
+
+// import 'echarts/lib/chart/map';
+
+// import 'echarts/lib/chart/treemap';
+
+// import 'echarts/lib/chart/graph';
+
+// import 'echarts/lib/chart/gauge';
+
+// import 'echarts/lib/chart/funnel';
+
+// import 'echarts/lib/chart/parallel';
+
+// import 'echarts/lib/chart/sankey';
+
+// import 'echarts/lib/chart/boxplot';
+
+// import 'echarts/lib/chart/candlestick';
+
+// import 'echarts/lib/chart/effectScatter';
+
+// import 'echarts/lib/chart/lines';
+
+// import 'echarts/lib/chart/heatmap';
+
+// import 'echarts/lib/component/graphic';
+
+// import 'echarts/lib/component/grid';
+
+// import 'echarts/lib/component/legend';
+
+import 'echarts/lib/component/tooltip';
+
+// import 'echarts/lib/component/polar';
+
+// import 'echarts/lib/component/geo';
+
+// import 'echarts/lib/component/parallel';
+
+// import 'echarts/lib/component/singleAxis';
+
+// import 'echarts/lib/component/brush';
+
+import 'echarts/lib/component/title';
+
+// import 'echarts/lib/component/dataZoom';
+
+// import 'echarts/lib/component/visualMap';
+
+// import 'echarts/lib/component/markPoint';
+
+// import 'echarts/lib/component/markLine';
+
+// import 'echarts/lib/component/markArea';
+
+// import 'echarts/lib/component/timeline';
+
+// import 'echarts/lib/component/toolbox';
+
+// import 'zrender/lib/vml/vml';
+
+// The usage of ReactEchartsCore are same with above.
+
+//按需引入可以减小打包大小
+
+```
+### 使用组件
+
+```
+<ReactEchartsCore
+
+  echarts={echarts}
+
+  option={this.getOption()}
+
+  notMerge={true}
+
+  lazyUpdate={true}
+
+  theme={"theme_name"}
+
+  ref={(e) => { this.echarts_react = e; } // 用来获取echart实例
+
+  onChartReady={this.onChartReadyCallback}
+
+  onEvents={EventsDict} // 用来配置并且添加事件
+
+  opts={} />
+```
+### 事件字典
+```
+let EventsDict = { //配置事件字典
+
+  'click': this.onChartClick,
+
+  'legendselectchanged': this.onChartLegendselectchanged
+
+}
+```
+
+
+
+
+
+
+
+> 下面是工程开发中的一般流程从上面的例子可以看得出来一般工程中我们只需配置option然后将option传入到echart的组件中即可生成相应的图表，下面就是我们的option配置流程
+
+* 工程中首先打开 这个网址   [http://tushuo.baidu.com/](http://tushuo.baidu.com/)。 图说
+
+![image.png](https://upload-images.jianshu.io/upload_images/6958980-1f9f32ecd37f0406.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240) 
+
+* 点击开始制作图表
+
+* 再点击创建图表
+
+![image.png](https://upload-images.jianshu.io/upload_images/6958980-952b6a74d724f34a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240) 
+
+* 选择你想要的图表类型
+
+![image.png](https://upload-images.jianshu.io/upload_images/6958980-38b2a0609bfcb386.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240) 
+
+* 然后将鼠标移到图表区域
+
+![image.png](https://upload-images.jianshu.io/upload_images/6958980-273ced6bb75a8010.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+* 然后点击参数调整
+![image.png](https://upload-images.jianshu.io/upload_images/6958980-d58090782f1d93af.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+
+* 然后进行一般参数配置，将图表调整到和UI或者原型比较符合的情况
+![image.png](https://upload-images.jianshu.io/upload_images/6958980-2b7e515f863f5442.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+* 然后再将鼠标移到图的区域点击生成代码
+
+
+![image.png](https://upload-images.jianshu.io/upload_images/6958980-c6e3e231f0675bc5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+* 将代码拷贝到你的项目中，或者直接从官网的demo中进行修改然后拷贝代码,或者将代码拷到官网的demo中进行调整
+
+* 然后打开echart官网选择配置项文档进行细化美化
+
+![image.png](https://upload-images.jianshu.io/upload_images/6958980-8d07cfe238ac803b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+* 配置项的简单注释如下
+
+
+```
+.setOption({
+
+title: {...},//配置图表标题主标图副标题
+
+legend: {...},//配置图例
+
+grid: {...},//网格化布局
+
+xAxis: {...},//x轴
+
+yAxis: {...},//y轴
+
+polar: {...},//极坐标系
+
+radiusAxis: {...},//极坐标轴的径向轴
+
+angleAxis: {...},//极坐标角度轴
+
+radar: {...},//雷达图坐标系组件
+
+dataZoom: [...],//区域缩放功能组件
+
+visualMap: [...],//视觉映射组件
+
+tooltip: {//弹出框组件
+
+    show: true,//控制是否启用弹出框功能
+
+    trigger: 'item',//触发器，'item'数据项图形触发，主要在散点图，饼图等无类目轴的图表中使用。'axis'坐标轴触发，主要在柱状图，折线图等会使用类目轴的图表中使用。在 ECharts 2.x 中只支持类目轴上使用 axis trigger，在 ECharts 3 中支持在直角坐标系和极坐标系上的所有类型的轴。并且可以通过 axisPointer.axis 指定坐标轴。'none'什么都不触发。
+
+    axisPointer: {//弹出框的x轴位置指示器表示弹出框里展示的细节数据是哪里的
+
+        type: 'line',//指示器的类型
+
+        axis: 'auto',//指示器的坐标轴。默认情况，坐标系会自动选择显示哪个轴的 axisPointer（默认取类目轴或者时间轴）。可以是 'x', 'y', 'radius', 'angle'。
+
+        snap: ...,//坐标轴指示器是否自动吸附到点上。默认自动判断。
+
+        z: ...,//控制zleval
+
+        label: {...},//指示器的label
+
+        lineStyle: {...},//线的样式
+
+        shadowStyle: {...},//阴影样式
+
+        crossStyle: {...},//axisPointer.type 为 'cross' 时有效。
+
+    },
+
+    showContent: true,//是否现实文本内容
+
+    alwaysShowContent: false,//是否一直显示内容
+
+    triggerOn: 'mousemove|click',//触发方式
+
+    showDelay: 0,//是否延迟显示，动画效果
+
+    hideDelay: 100,//延迟消失时间
+
+    enterable: false,//鼠标是否可以进入
+
+    confine: false,//是否将tooltip限制在图表区域内
+
+    transitionDuration: 0.4,//动画的过度时间
+
+    position: //位置控制位置
+
+    //demo
+
+    function (point, params, dom, rect, size) {//
+
+            //point, params, dom, rect, size//四个参数很有意思  可以通过这些参数在这里生成自己想要的dom节点
+
+            //
+
+            let num = 0
+
+            for (let i in params) {
+
+              num += params[i].value
+
+            }
+
+            let innerstring = ''
+
+            for (let i in params) {
+
+              let result = 0
+
+              if (num == 0) {
+
+                result = 0
+
+              }else {
+
+                result = parseInt(params[i].data/num*100)
+
+              }
+
+              innerstring += "<div class='inner_dom'><span>" +params[i].seriesName+"</span> <span>"+params[i].data+"</span> <span>"+ result +"%</span></div>"
+
+            }
+
+            let domstring = `<div>
+
+              <span class='inner_Title'>${params[0].name}</span>
+
+              ${innerstring}
+
+            </div>`
+
+            dom.innerHTML = domstring
+
+            const width = document.body.clientWidth
+
+            let xposition = ''
+
+            let tooltipsize = size.contentSize[0]
+
+            if (point[0] < width) {
+
+              xposition = point[0]
+
+            } else if (point[0] > width &&  point[0]< 2*width) {
+
+              xposition = point[0] - width
+
+            }  else {
+
+              xposition =  point[0] - 2*width
+
+            }
+
+            let dis = 80
+
+            if (size.contentSize[0] < 200){
+
+              dis = 50
+
+            }
+
+            if (width - xposition <= tooltipsize + dis) {
+
+              xposition = width - tooltipsize - dis
+
+            }
+
+            return [xposition, '-40%'];
+
+          },
+
+    formatter: //
+
+            function (params, ticket, callback) {//参数也是很有意思可以直接返货dom元素自定义tooltip
+
+            $.get('detail?name=' + params.name, function (content) {
+
+                callback(ticket, toHTML(content));
+
+            });
+
+            return 'Loading';
+
+    },
+
+    backgroundColor: 'rgba(50,50,50,0.7)',//背景颜色
+
+    borderColor: '#333',//边框颜色
+
+    borderWidth: 0,//边框厚度
+
+    padding: 5,//设置padding值
+
+    textStyle: {...},//文本的样式
+
+    extraCssText: ...,//额外的自定义样式
+
+},
+
+axisPointer: {...},//这是坐标轴指示器（axisPointer）的全局公用设置。
+
+toolbox: {//工具栏。内置有导出图片，数据视图，动态类型切换，数据区域缩放，重置五个工具
+
+    show: true,//是否显示工具栏
+
+    orient: 'horizontal',//水平还是垂直。'horizontal'//水平'vertical'垂直
+
+    itemSize: 15,//大小
+
+    itemGap: 10,//间隙
+
+    showTitle: true,//是否显示标图
+
+    feature: {//具体的某项功能点
+
+    saveAsImage: {...},//储存图片
+
+    restore: {...},//重新储存
+
+    dataView: {...},//数据视图工具，可以展现当前图表所用的数据，编辑后可以动态更新。
+
+    dataZoom: {...},//数据区域缩放。目前只支持直角坐标系的缩放。
+
+    magicType: {...},
+
+            // 动态类型切换 示例：
+
+            // feature: {
+
+            //     magicType: {
+
+            //         type: ['line', 'bar', 'stack', 'tiled']
+
+            //     }
+
+            // }
+
+    brush: {...},
+
+    },
+
+    iconStyle: {...},//公用的 icon 样式设置。
+
+    emphasis: {...},//点击或者聚焦时的样式
+
+    zlevel: 0,//所有图形zleval值
+
+    z: 2,//组件的所有图形的zleval值
+
+    left: 'auto',//控制位置
+
+    top: 'auto',
+
+    right: 'auto',
+
+    bottom: 'auto',
+
+    width: 'auto',//控制大小
+
+    height: 'auto',
+
+},
+
+brush: {...},//区域选择组件
+
+geo: {...},//地理坐标系组件
+
+parallel: {...},//平行坐标系
+
+parallelAxis: {...},//这个组件是平行坐标系中的坐标轴
+
+singleAxis: {...},//单轴。可以被应用到散点图中展现一维数据
+
+timeline: {...},//timeline 组件，提供了在多个 ECharts option 间进行切换、播放等操作的功能
+
+graphic: {//graphic 是原生图形元素组件。可以支持的图形元素包括：image, text, circle, sector, ring, polygon, polyline, rect, line, bezierCurve, arc, group   非常重要可以用来画自定义的图形来满足工程需要
+
+elements:[//数组用来添加图形对象
+
+    {
+
+type: group,
+
+id: undefined,
+
+$action: 'merge',
+
+left: undefined,
+
+right: undefined,
+
+top: undefined,
+
+bottom: undefined,
+
+bounding: 'all',
+
+z: 0,
+
+zlevel: 0,
+
+silent: false,
+
+invisible: false,
+
+cursor: 'pointer',
+
+draggable: false,
+
+progressive: false,
+
+width: 0,
+
+height: 0,
+
+children: [...], //其他的图形类型对象
+
+onclick: Function,
+
+onmouseover: Function,
+
+onmouseout: Function,
+
+onmousemove: Function,
+
+onmousewheel: Function,
+
+onmousedown: Function,
+
+onmouseup: Function,
+
+ondrag: Function,
+
+ondragstart: Function,
+
+ondragend: Function,
+
+ondragenter: Function,
+
+ondragleave: Function,
+
+ondragover: Function,
+
+ondrop: Function,
+
+},
+
+]
+
+},
+
+calendar: {...},//日历坐标系组件
+
+dataset: {...},//数据集（dataset）组件用于单独的数据集声明，从而数据可以单独管理，被多个组件复用，并且可以自由指定数据到视觉的映射。这在不少场景下能带来使用上的方便
+
+aria: {...},//为了让残障人士也进行访问进行智能描述的组件
+
+series:  [//系列列表通过type决定自己的图表类型
+
+    {
+
+    type: 'line',//类型
+
+    name: ...,//名字
+
+    coordinateSystem: 'cartesian2d',//使用二维的直角坐标系（也称笛卡尔坐标系），通过 xAxisIndex, yAxisIndex指定相应的坐标轴组件
+
+    xAxisIndex: 0,//x轴的index存在多个x轴的时候有用
+
+    yAxisIndex: 0,
+
+    polarIndex: 0,//使用极坐标系的时候u 存在多个极坐标系的时候有用
+
+    symbol: 'emptyCircle',//具体值的标记形式
+
+    symbolSize: 4,//标记的大小
+
+    symbolRotate: ...,
+
+    symbolOffset: [0, 0],//标记的位置
+
+    showSymbol: true,//是否显示标记
+
+    showAllSymbol: false,//
+
+    hoverAnimation: true,是否显示所有的标记
+
+    legendHoverLink: true,//是否启用图例hover时高亮
+
+    stack: null,//数据堆叠
+
+    cursor: 'pointer',//鼠标的样式
+
+    connectNulls: false,//是否连接空数据
+
+    clipOverflow: true,//超出部分是否裁剪默认裁剪
+
+    step: false,//是否是阶梯线
+
+    label: {...},//图形上的文本标签
+
+    itemStyle: {...},//元素的样式
+
+    lineStyle: {...},//线的样式
+
+    areaStyle: {...},//区域的样式
+
+    emphasis: {...},//聚焦时的样式
+
+    smooth: false,//是否平滑过度
+
+    smoothMonotone: ...,//折线平滑后是否在一个维度上保持单调性，可以设置成'x', 'y'来指明是在 x 轴或者 y 轴上保持单调性。设置为 'none' 则采用不单调的平滑算法
+
+    sampling: ...,//折线图在数据量远大于像素点时候的降采样策略，开启后可以有效的优化图表的绘制效率，默认关闭，也就是全部绘制不过滤数据点
+
+    dimensions: [...],//使用 dimensions 定义 series.data 或者 dataset.source 的每个维度的信息
+
+    encode: {...},//可以定义 data 的哪个维度被编码成什么。比如：
+
+    seriesLayoutBy: 'column',//seriesLayoutBy 指定了 dataset 中用行还是列对应到系列上
+
+    datasetIndex: 0,//datasetIndex 指定本系列使用那个 dataset
+
+    data: [{...}],//具体的数值
+
+    markPoint: {...},//图表标注
+
+    markLine: {...},//图表标线。
+
+    markArea: {...},//图表标域
+
+    zlevel: 0,//折线图所有图形的 zlevel 值
+
+    z: 2,//折线图组件的所有图形的z值
+
+    silent: false,//图形是否不响应和触发鼠标事件，默认为 false，即响应和触发鼠标事件
+
+    animation: true,//是否显示动画
+
+    animationThreshold: 2000,//是否开启动画的阈值，当单个系列显示的图形数量大于这个阈值时会关闭动画
+
+    animationDuration: 1000,//动画过度的时间
+
+    animationEasing: linear,//初始动画的缓动效果
+
+    animationDelay: 0,//延迟时间
+
+    animationDurationUpdate: 300,//数据更新动画的时长
+
+    animationEasingUpdate: cubicOut,//数据更新动画的缓动效果
+
+    animationDelayUpdate: 0,//数据更新动画的时长
+
+    tooltip: {...},//弹出框设置
+
+    },
+
+    {type: 'bar', ...},//柱形图
+
+    {type: 'pie', ...},//饼图
+
+    {type: 'scatter', ...},//散点（气泡）图
+
+    {type: 'effectScatter', ...},//带有涟漪特效动画的散点（气泡）图
+
+    {type: 'radar', ...},//雷达图
+
+    {type: 'tree', ...},//树状结构图
+
+    {type: 'treemap', ...},//Treemap 是一种常见的表达『层级数据』『树状数据』的可视化形式。它主要用面积的方式，便于突出展现出『树』的各层级中重要的节点
+
+    {type: 'sunburst', ...},//旭日图（Sunburst）由多层的环形图组成，在数据结构上，内圈是外圈的父节点。因此，它既能像饼图一样表现局部和整体的占比，又能像矩形树图一样表现层级关系。
+
+    {type: 'boxplot', ...},//Boxplot 中文可以称为『箱形图』、『盒须图』、『盒式图』、『盒状图』、『箱线图』，是一种用作显示一组数据分散情况资料的统计图。它能显示出一组数据的最大值、最小值、中位数、下四分位数及上四分位数。
+
+    {type: 'candlestick', ...},//K线图。在 ECharts3 中，同时支持 'candlestick' 和 'k'这两种 'series.type'（'k' 会被自动转为 'candlestick'）
+
+    {type: 'heatmap', ...},//热力图
+
+    {type: 'map', ...},//地图
+
+    {type: 'parallel', ...},//平行坐标系的系列
+
+    {type: 'lines', ...},//折线图
+
+    {type: 'graph', ...},//关系图 用于展现节点以及节点之间的关系数据
+
+    {type: 'sankey', ...},//桑基图 是一种特殊的流图, 它主要用来表示原材料、能量等如何从初始形式经过中间过程的加工、转化到达最终形式
+
+    {type: 'funnel', ...},//漏斗图
+
+    {type: 'gauge', ...},//仪表盘
+
+    {type: 'pictorialBar', ...},//象形柱图
+
+    {type: 'themeRiver', ...},//主题河流 是一种特殊的流图, 它主要用来表示事件或主题等在一段时间内的变化。
+
+    {type: 'custom', ...},//自定义系列
+
+    ],//
+
+color: {...},//整体的颜色
+
+backgroundColor: {...},//背景色
+
+textStyle: {...},//整体文本样式
+
+animation: {...},//动画
+
+animationThreshold: {...},
+
+animationDuration: {...},
+
+animationEasing: {...},
+
+animationDelay: {...},
+
+animationDurationUpdate: {...},
+
+animationEasingUpdate: {...},
+
+animationDelayUpdate: {...},
+
+progressive: {...},//渐进式渲染时每一帧绘制图形数量，设为 0 时不启用渐进式渲染，支持每个系列单独配置
+
+progressiveThreshold: {...},
+
+blendMode: {...},//渐进式渲染时每一帧绘制图形数量，设为 0 时不启用渐进式渲染，支持每个系列单独配置
+
+hoverLayerThreshold: {...},
+
+useUTC: {...},//是否使用 UTC 时间
+
+}
+
+
+
+// 线性渐变，前四个参数分别是 x0, y0, x2, y2, 范围从 0 - 1，相当于在图形包围盒中的百分比，如果 globalCoord 为 `true`，则该四个值是绝对的像素位置
+
+color: {
+
+    type: 'linear',
+
+    x: 0,
+
+    y: 0,
+
+    x2: 0,
+
+    y2: 1,
+
+    colorStops: [{
+
+        offset: 0, color: 'red' // 0% 处的颜色
+
+    }, {
+
+        offset: 1, color: 'blue' // 100% 处的颜色
+
+    }],
+
+    globalCoord: false // 缺省为 false
+
+}
+
+// 径向渐变，前三个参数分别是圆心 x, y 和半径，取值同线性渐变
+
+color: {
+
+    type: 'radial',
+
+    x: 0.5,
+
+    y: 0.5,
+
+    r: 0.5,
+
+    colorStops: [{
+
+        offset: 0, color: 'red' // 0% 处的颜色
+
+    }, {
+
+        offset: 1, color: 'blue' // 100% 处的颜色
+
+    }],
+
+    globalCoord: false // 缺省为 false
+
+}
+
+// 纹理填充
+
+color: {
+
+    image: imageDom, // 支持为 HTMLImageElement, HTMLCanvasElement，不支持路径字符串
+
+    repeat: 'repeat' // 是否平铺, 可以是 'repeat-x', 'repeat-y', 'no-repeat'
+
+}
+
+
+```
+
+
+
+具体请参照官方配置项文档： [http://echarts.baidu.com/option.html#title](http://echarts.baidu.com/option.html#title)
+
+
+* all right reserved 转载请注明出处
