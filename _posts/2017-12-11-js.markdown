@@ -1,0 +1,167 @@
+---
+title : js部分兼容写法
+layout: post
+date:   2017-12-11 
+categories: 技术文章
+---
+
+
+* 1.获取鼠标键值
+```
+document.onkeydown = function (event){//测试鼠标键值的函数
+    var evt = event || window.event;
+    console.log(evt.which || evt.keyCode)
+    return evt.which || evt.keyCode;
+}   
+ 
+```
+* 2.获取页面滚动高度      
+```
+document.body.scrolltop || document. documentElement.scrolltop
+document.body.clientHeight || document.documentElement.clientHeight 
+```
+
+* 3.事件兼容
+```
+function(event){
+var evt = event || window.event
+}
+
+```
+* 4.阻止冒泡
+```
+e.stopPropagation();   标准写法
+e.cancelBubble = true;    IE写法
+e.stopPropagation ? e.stopPropagation() : e.cancelBubble = true;
+```
+
+* 5阻止默认事件
+```
+e.preventDefault();    标准写法
+e.returnValue = false;    IE写法
+e.preventDefault ? e.preventDefault() : e.returnValue = false;
+新版本 直接returnfalse
+```
+
+
+
+* 6事件监听的添加移除
+```
+添加监听的一般写法
+
+function addEvent(DOM,name,callback){//添加事件监听的兼容函数需要传入的参数有dom元素，事件名，和函数名需要事先定义函数
+                if(DOM.addEventListener){
+                    DOM.addEventListener(name,callback);
+                }else{
+                    DOM.attachEvent("on"+name,callback);
+                }
+   }
+
+
+添加监听的高级写法    prototype 属性使您有能力向对象添加属性和方法。
+
+Element.prototype.addEvent = function(name,fn){ //固定写法向原型中添加方法
+            if(this.addEventListener){
+                this.addEventListener(name,fn);
+            }else{
+                this.attachEvent("on" + name,fn)
+            }
+        }
+
+
+        oBtn.addEvent("click",function(){
+            alert(1);
+        });
+
+     
+移除监听的一般写法
+function removeEvent(DOM,name,fn){
+            //console.log(fn);//事件处理函数?;
+            if(DOM.addEventListener){
+                DOM.removeEventListener(name,fn);
+            }else{
+                DOM.detachEvent("on" + name,fn)
+            }
+
+        }
+```
+
+
+
+
+
+
+* 7.事件委托
+```
+function delegation(select,callback){ //事件委托的函数兼容
+
+        return function(event){
+            //1.限制范围; 点谁有效,点谁无效;
+            var evt = event || window.event;
+            // console.log(evt.target)
+            if(evt.target.nodeName == select){
+                callback.call(evt.target)
+            }
+        }
+    }
+```
+
+8.改变this指向的两种方法
+```
+原先用call
+function fn( ){
+console.log(this)
+}
+fn.call(123)
+//结果为123
+
+bind改变
+function fn(){
+]}.bind()//运行时会报错
+因为bind只能绑定给未命名函数
+这时
+var fn = function (){
+            console.log(this)
+        }.bind(123)
+        fn();
+这样就不会报错了
+
+```
+* 9获取非行内样式的方法
+```
+box.currentStyle.width   //IE
+window.getComputedStyle(box, null).width    //非IE
+style = box.currentStyle || getComputedStyle(box,null) ;
+
+```
+* 10获取鼠标的信息
+```
+鼠标键值
+function(event){
+var evt = event || window.event  // 推荐使用 兼容性好
+evt.button// 鼠标键值 左键0 中建 1右键 2
+}
+鼠标位置（坐标）
+obox.onmousedown = function( event  ){
+var   evt = event || window.event
+//1 offsetX offsetY
+//最小区域的位置信息相对于最近的父元素根据时间发生的元素
+//2 clientX clientY
+//可视区根据浏览器宽高
+//3 screenX screenY
+根据屏幕的边
+}
+
+```
+* 11过滤文本节点
+
+
+```
+var list = document.getElementsById().childNodes;
+var newlist = [];
+for(var i=0; i<list.length; i++){
+     if(list[i].nodeType == 1){
+          newlist.push(list[i]);
+     }
+}
+```
