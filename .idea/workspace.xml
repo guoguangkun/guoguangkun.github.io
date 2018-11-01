@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8da590b8-7d29-4619-b1e7-cbda33c06d73" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/_posts/2018-03-24-http.markdown" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_posts/2018-04-11-ted-a.markdown" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2015-10-20-让青春继续读书笔记.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2015-10-20-让青春继续读书笔记.markdown" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2015-11-10-追寻生命的意义.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2015-11-10-追寻生命的意义.markdown" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2016-01-10-拖延心理学 .markdown" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2016-01-10-拖延心理学 .markdown" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2017-03-14-lishi.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2017-03-14-lishi.markdown" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -40,12 +44,60 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2018-03-24-http.markdown" pinned="false" current-in-tab="true">
+      <file leaf-file-name="2018-03-24-http.markdown" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_posts/2018-03-24-http.markdown">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="15">
-                <caret line="1" column="22" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
+              <first_editor>
+                <caret selection-end-line="5" selection-end-column="3" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2018-04-11-ted-a.markdown" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/_posts/2018-04-11-ted-a.markdown">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="270">
+                <caret line="18" column="2" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2015-10-20-让青春继续读书笔记.markdown" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_posts/2015-10-20-让青春继续读书笔记.markdown">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="60">
+                <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2015-11-10-追寻生命的意义.markdown" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_posts/2015-11-10-追寻生命的意义.markdown">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="60">
+                <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2016-01-10-拖延心理学 .markdown" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_posts/2016-01-10-拖延心理学 .markdown">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="60">
+                <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
               </first_editor>
               <second_editor />
             </state>
@@ -56,56 +108,8 @@
         <entry file="file://$PROJECT_DIR$/_posts/2017-03-14-lishi.markdown">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="510">
-                <caret line="34" column="25" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2017-05-11-echart.markdown" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_posts/2017-05-11-echart.markdown">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor>
-                <caret selection-end-line="5" selection-end-column="3" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2017-09-10-cross.markdown" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_posts/2017-09-10-cross.markdown">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor>
-                <caret selection-end-line="5" selection-end-column="3" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2017-10-17-canvas-retina.markdown" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_posts/2017-10-17-canvas-retina.markdown">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor>
-                <caret selection-end-line="5" selection-end-column="3" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2017-12-11-js.markdown" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_posts/2017-12-11-js.markdown">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor>
-                <caret selection-end-line="5" selection-end-column="3" />
+              <first_editor relative-caret-position="75">
+                <caret line="5" column="3" lean-forward="true" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
               </first_editor>
               <second_editor />
             </state>
@@ -147,13 +151,10 @@
         <option value="$PROJECT_DIR$/_posts/2015-03-08-welcome-to-jekyll.markdown" />
         <option value="$PROJECT_DIR$/_posts/2015-10-07-mobx入门.markdown" />
         <option value="$PROJECT_DIR$/_posts/2015-10-20-读书笔记.markdown" />
-        <option value="$PROJECT_DIR$/_posts/2015-11-10-追寻生命的意义.markdown" />
         <option value="$PROJECT_DIR$/_posts/2016-02-20-git命令清单.markdown" />
         <option value="$PROJECT_DIR$/_posts/2016-04-15-让一个矩形根据键盘上下左右移动.markdown" />
-        <option value="$PROJECT_DIR$/_posts/2016-01-10-拖延心理学 .markdown" />
         <option value="$PROJECT_DIR$/_posts/2015-12-23.markdown" />
         <option value="$PROJECT_DIR$/_posts/2015-12-23-梦.markdown" />
-        <option value="$PROJECT_DIR$/_posts/2017-03-14-lishi.markdown" />
         <option value="$PROJECT_DIR$/_posts/2017-05-11-echart.markdown" />
         <option value="$PROJECT_DIR$/_posts/2017-09-10-cross.markdown" />
         <option value="$PROJECT_DIR$/_posts/2017-10-17-canvas-retina.markdown" />
@@ -162,6 +163,11 @@
         <option value="$PROJECT_DIR$/_posts/2015-09-11-newstudyway.markdown" />
         <option value="$PROJECT_DIR$/_posts/2018-02-15-less.markdown" />
         <option value="$PROJECT_DIR$/_posts/2018-03-24-http.markdown" />
+        <option value="$PROJECT_DIR$/_posts/2015-10-20-让青春继续读书笔记.markdown" />
+        <option value="$PROJECT_DIR$/_posts/2015-11-10-追寻生命的意义.markdown" />
+        <option value="$PROJECT_DIR$/_posts/2016-01-10-拖延心理学 .markdown" />
+        <option value="$PROJECT_DIR$/_posts/2017-03-14-lishi.markdown" />
+        <option value="$PROJECT_DIR$/_posts/2018-04-11-ted-a.markdown" />
       </list>
     </option>
   </component>
@@ -236,12 +242,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1540987451460</updated>
-      <workItem from="1540987452634" duration="5176000" />
+      <workItem from="1540987452634" duration="5738000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5176000" />
+    <option name="totallyTimeSpent" value="5738000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="822" extended-state="6" />
@@ -290,26 +296,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2015-10-20-让青春继续读书笔记.markdown">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor>
-            <caret selection-end-line="5" selection-end-column="3" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2015-11-10-追寻生命的意义.markdown">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor>
-            <caret selection-end-line="5" selection-end-column="3" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_posts/2016-02-20-git命令清单.markdown">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -330,31 +316,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2016-01-10-拖延心理学 .markdown">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor>
-            <caret selection-end-line="5" selection-end-column="3" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_posts/2016-04-15-让一个矩形根据键盘上下左右移动.markdown">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor>
             <caret selection-end-line="5" selection-end-column="3" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2017-03-14-lishi.markdown">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="510">
-            <caret line="34" column="25" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
           </first_editor>
           <second_editor />
         </state>
@@ -443,8 +409,58 @@
     <entry file="file://$PROJECT_DIR$/_posts/2018-03-24-http.markdown">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="15">
-            <caret line="1" column="22" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
+          <first_editor>
+            <caret selection-end-line="5" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2015-10-20-让青春继续读书笔记.markdown">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="60">
+            <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2015-11-10-追寻生命的意义.markdown">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="60">
+            <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2016-01-10-拖延心理学 .markdown">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="60">
+            <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2017-03-14-lishi.markdown">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="75">
+            <caret line="5" column="3" lean-forward="true" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2018-04-11-ted-a.markdown">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="270">
+            <caret line="18" column="2" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
           </first_editor>
           <second_editor />
         </state>
