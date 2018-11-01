@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8da590b8-7d29-4619-b1e7-cbda33c06d73" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/_posts/2018-04-11-ted-a.markdown" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2015-10-20-让青春继续读书笔记.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2015-10-20-让青春继续读书笔记.markdown" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2015-11-10-追寻生命的意义.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2015-11-10-追寻生命的意义.markdown" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2016-01-10-拖延心理学 .markdown" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2016-01-10-拖延心理学 .markdown" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2017-03-14-lishi.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2017-03-14-lishi.markdown" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_posts/2018-05-24-online-study.markdown" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_posts/2018-06-24-cs.markdown" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,18 +18,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="2015-09-11-newstudyway.markdown" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_posts/2015-09-11-newstudyway.markdown">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="60">
-                <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="2018-02-15-less.markdown" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_posts/2018-02-15-less.markdown">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
@@ -56,12 +42,36 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2018-04-11-ted-a.markdown" pinned="false" current-in-tab="true">
+      <file leaf-file-name="2018-04-11-ted-a.markdown" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_posts/2018-04-11-ted-a.markdown">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="270">
-                <caret line="18" column="2" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
+              <first_editor>
+                <caret selection-end-line="5" selection-end-column="3" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2018-05-24-online-study.markdown" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_posts/2018-05-24-online-study.markdown">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor>
+                <caret selection-end-line="5" selection-end-column="3" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2018-06-24-cs.markdown" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/_posts/2018-06-24-cs.markdown">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="15">
+                <caret line="1" column="37" selection-start-line="1" selection-start-column="37" selection-end-line="1" selection-end-column="37" />
               </first_editor>
               <second_editor />
             </state>
@@ -128,18 +138,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2015-10-07-mobx入门.markdown" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_posts/2015-10-07-mobx入门.markdown">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor>
-                <caret selection-end-line="5" selection-end-column="3" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="Git.Settings">
@@ -168,6 +166,8 @@
         <option value="$PROJECT_DIR$/_posts/2016-01-10-拖延心理学 .markdown" />
         <option value="$PROJECT_DIR$/_posts/2017-03-14-lishi.markdown" />
         <option value="$PROJECT_DIR$/_posts/2018-04-11-ted-a.markdown" />
+        <option value="$PROJECT_DIR$/_posts/2018-05-24-online-study.markdown" />
+        <option value="$PROJECT_DIR$/_posts/2018-06-24-cs.markdown" />
       </list>
     </option>
   </component>
@@ -242,12 +242,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1540987451460</updated>
-      <workItem from="1540987452634" duration="5738000" />
+      <workItem from="1540987452634" duration="6881000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5738000" />
+    <option name="totallyTimeSpent" value="6881000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="822" extended-state="6" />
@@ -459,8 +459,28 @@
     <entry file="file://$PROJECT_DIR$/_posts/2018-04-11-ted-a.markdown">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="270">
-            <caret line="18" column="2" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
+          <first_editor>
+            <caret selection-end-line="5" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2018-05-24-online-study.markdown">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor>
+            <caret selection-end-line="5" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2018-06-24-cs.markdown">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="15">
+            <caret line="1" column="37" selection-start-line="1" selection-start-column="37" selection-end-line="1" selection-end-column="37" />
           </first_editor>
           <second_editor />
         </state>
