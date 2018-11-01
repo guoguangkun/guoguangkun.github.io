@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8da590b8-7d29-4619-b1e7-cbda33c06d73" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/_posts/2017-05-11-echart.markdown" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_posts/2017-09-10-cross.markdown" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_posts/2017-10-17-canvas-retina.markdown" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -54,8 +52,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2017-09-10-cross.markdown" pinned="false" current-in-tab="true">
+      <file leaf-file-name="2017-09-10-cross.markdown" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_posts/2017-09-10-cross.markdown">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor>
+                <caret selection-end-line="5" selection-end-column="3" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2017-10-17-canvas-retina.markdown" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/_posts/2017-10-17-canvas-retina.markdown">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="45">
@@ -68,18 +78,6 @@
       </file>
       <file leaf-file-name="2015-10-07-mobx入门.markdown" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_posts/2015-10-07-mobx入门.markdown">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor>
-                <caret selection-end-line="5" selection-end-column="3" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2015-11-10-追寻生命的意义.markdown" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_posts/2015-11-10-追寻生命的意义.markdown">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor>
@@ -159,6 +157,7 @@
         <option value="$PROJECT_DIR$/_posts/2017-03-14-lishi.markdown" />
         <option value="$PROJECT_DIR$/_posts/2017-05-11-echart.markdown" />
         <option value="$PROJECT_DIR$/_posts/2017-09-10-cross.markdown" />
+        <option value="$PROJECT_DIR$/_posts/2017-10-17-canvas-retina.markdown" />
       </list>
     </option>
   </component>
@@ -233,12 +232,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1540987451460</updated>
-      <workItem from="1540987452634" duration="3945000" />
+      <workItem from="1540987452634" duration="4099000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3945000" />
+    <option name="totallyTimeSpent" value="4099000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="822" extended-state="6" />
@@ -388,6 +387,16 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/_posts/2017-09-10-cross.markdown">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor>
+            <caret selection-end-line="5" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2017-10-17-canvas-retina.markdown">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="45">
