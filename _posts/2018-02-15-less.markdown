@@ -1,0 +1,427 @@
+---
+title : less语法简明教程
+layout: post
+date:   2018-02-15 
+categories: 技术文章
+---
+
+### less 语法
+
+#### variables 变量
+```
+定义
+@nice-blue: #5B83AD;
+运算
+@light-blue: @nice-blue + #111;
+
+使用
+#header {
+  color: @light-blue;
+}
+
+效果
+#header {
+  color: #6c94be;
+}
+```
+Selectors （选择器）
+
+```
+// 变量
+@mySelector: banner;
+
+// 用法
+.@{mySelector} {
+  font-weight: bold;
+  line-height: 40px;
+  margin: 0 auto;
+}
+```
+extend
+```
+.my-inline-block {
+  display: inline-block;
+  font-size: 0;
+}
+.thing1 {
+  &:extend(.my-inline-block);
+}
+.thing2 {
+  &:extend(.my-inline-block);
+}
+
+
+.my-inline-block,
+.thing1,
+.thing2 {
+  display: inline-block;
+  font-size: 0;
+}
+```
+#### Mixins （混合）
+
+```
+
+//定义
+.bordered {
+  border-top: dotted 1px black;
+  border-bottom: solid 2px black;
+}
+
+// 使用
+#menu a {
+  color: #111;
+  .bordered;
+}
+
+.post a {
+  color: red;
+  .bordered;
+}
+```
+
+
+#### Nested rules 嵌套规则
+
+```
+#header {
+  color: black;
+  .navigation {
+    font-size: 12px;
+  }
+  .logo {
+    width: 300px;
+  }
+}
+
+
+（& 表示当前选择器的父选择器）:
+.clearfix {
+  display: block;
+  zoom: 1;
+
+  &:after {
+    content: " ";
+    display: block;
+    font-size: 0;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+}
+```
+
+#### operators
+
+```
+@base: 5%;
+@filler: @base * 2;
+@other: @base + @filler;
+
+color: #888 / 4;
+background-color: @base-color + #111;
+height: 100% / 2 + @filler;
+
+@var: 1px + 5;
+```
+
+#### Functions （函数）
+
+
+```
+
+@base: #f04615;
+@width: 0.5;
+
+.class {
+  width: percentage(@width); // returns `50%`
+  color: saturate(@base, 5%);
+  background-color: spin(lighten(@base, 25%), 8);
+}
+
+```
+
+
+#### 
+
+```
+@my-ruleset: {
+    .my-selector {
+      @media tv {
+        background-color: black;
+      }
+    }
+  };
+@media (orientation:portrait) {
+    @my-ruleset();
+}
+
+@media (orientation: portrait) and tv {
+  .my-selector {
+    background-color: black;
+  }
+}
+```
+
+
+```
+// 带有mixin的分离规则集合
+@detached-ruleset: { 
+    .mixin() {
+        color:blue;
+    }
+};
+// 调用分离规则集合
+.caller {
+    @detached-ruleset(); 
+    .mixin();
+}
+
+.caller {
+  color: blue;
+}
+```
+
+#### Guard comparison operators （Guard中的比较运算符）
+guards中可用的比较运算符的完整列表为： >, >=, =, =<, <。此外，关键字true是让两个mixins等价的唯一真值
+```
+
+.mixin (@a) when (@a > 10), (@a < -10) { ... }
+
+.mixin (@a; @b: black) when (iscolor(@b)) { ... }
+
+& when (@my-option = true) {
+  button {
+    color: white;
+  }
+  a {
+    color: blue;
+  }
+}
+```
+
+
+#### Loops （循环）
+
+使用递归循环最常见的情况就是生成栅格系统的CSS：
+
+```
+.generate-columns(4);
+
+.generate-columns(@n, @i: 1) when (@i =< @n) {
+  .column-@{i} {
+    width: (@i * 100% / @n);
+  }
+  .generate-columns(@n, (@i + 1));
+}
+
+.column-1 {
+  width: 25%;
+}
+.column-2 {
+  width: 50%;
+}
+.column-3 {
+  width: 75%;
+}
+.column-4 {
+  width: 100%;
+}
+
+
+```
+#### Merge （合并）
+
+Comma （逗号）
+```
+.mixin() {
+  box-shadow+: inset 0 0 10px #555;
+}
+.myclass {
+  .mixin();
+  box-shadow+: 0 0 20px black;
+}
+
+.myclass {
+  box-shadow: inset 0 0 10px #555, 0 0 20px black;
+}
+```
+
+
+Space （作用域）
+
+```
+.mixin() {
+  transform+_: scale(2);
+}
+.myclass {
+  .mixin();
+  transform+_: rotate(15deg);
+}
+
+.myclass {
+  transform: scale(2) rotate(15deg);
+}
+
+```
+#### Parent Selectors （父级选择器）
+
+```
+
+// 输入
+a {
+  color: blue;
+  &:hover {
+    color: green;
+  }
+}
+
+// 输出
+a {
+  color: blue;
+}
+
+a:hover {
+  color: green;
+}
+
+// 输入
+.button {
+  &-ok {
+    background-image: url("ok.png");
+  }
+  &-cancel {
+    background-image: url("cancel.png");
+  }
+
+  &-custom {
+    background-image: url("custom.png");
+  }
+}
+
+// 输出
+
+.button-ok {
+  background-image: url("ok.png");
+}
+.button-cancel {
+  background-image: url("cancel.png");
+}
+.button-custom {
+  background-image: url("custom.png");
+}
+```
+Multiple & （多个 &）
+ ```
+ .link {
+  & + & {
+    color: red;
+  }
+
+  & & {
+    color: green;
+  }
+
+  && {
+    color: blue;
+  }
+
+  &, &ish {
+    color: cyan;
+  }
+}
+
+
+.link + .link {
+  color: red;
+}
+.link .link {
+  color: green;
+}
+.link.link {
+  color: blue;
+}
+.link, .linkish {
+  color: cyan;
+}
+ ```
+ 
+ 注意，&代表所有的父选择器（而不只是最近的长辈），因此下面的例子：
+ 
+ ```
+ 
+ .grand {
+  .parent {
+    & > & {
+      color: red;
+    }
+
+    & & {
+      color: green;
+    }
+
+    && {
+      color: blue;
+    }
+
+    &, &ish {
+      color: cyan;
+    }
+  }
+}
+
+
+.grand .parent > .grand .parent {
+  color: red;
+}
+.grand .parent .grand .parent {
+  color: green;
+}
+.grand .parent.grand .parent {
+  color: blue;
+}
+.grand .parent,
+.grand .parentish {
+  color: cyan;
+}
+ ```
+ 
+ &还可以用于生成一个逗号分割列表的所有可能的选择器排列：
+ 
+ 
+ ```
+ p, a, ul, li {
+  border-top: 2px dotted #366;
+  & + & {
+    border-top: 0;
+  }
+}
+ 
+ 
+ 
+ 
+ p,
+a,
+ul,
+li {
+  border-top: 2px dotted #366;
+}
+p + p,
+p + a,
+p + ul,
+p + li,
+a + p,
+a + a,
+a + ul,
+a + li,
+ul + p,
+ul + a,
+ul + ul,
+ul + li,
+li + p,
+li + a,
+li + ul,
+li + li {
+  border-top: 0;
+}
+ ```
