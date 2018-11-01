@@ -1,0 +1,148 @@
+---
+title : git命令清单
+layout: post
+date:   2015-09-11 20:30:43
+categories: 技术文章
+---
+
+ > git的commit分三个区域以及三个阶段：
+
+* working tree：就是你所工作在的目录，每当你在代码中进行了修改，working tree的状态就改变了。
+
+* index file：是索引文件，它是连接working tree和commit的桥梁，每当我们使用git add命令来登记后，index file的内容就改变了，此时index file就和working tree同步了。
+
+* commit：是最后的阶段，只有commit了，我们的代码才真正进入了git仓库。我们使用git-commit就是将index file里的内容提交到本地版本库commit中。
+
+> 远程仓库remote repository:要将本地仓库中的修改推送到远程仓库才能实现共享,使用git push命令。
+
+> 查看修改：
+
+git diff：是查看working tree与index file的差别的。
+
+git diff --cached：是查看index file与commit的差别的。
+
+git diff HEAD：是查看working tree和commit的差别的。（你一定没有忘记，HEAD代表的是最近的一次commit的信息）
+
+
+
+> 对应的回滚操作:
+
+working tree改变了的，用 git checkout
+
+index区改变了的，用git reset [--hard|soft|mixed|merge|keep] [或HEAD] , 然后再checkout
+
+已经commit了的，可以使用git revert，但用git revert 是没法抹掉已经commit的log的信息，如果要抹掉历史信息，可以使用git reset，建议加参数--soft，这样即使reset了，也不会抛弃当前working tree中的修改
+
+
+
+> git的分支：
+
+git branch ---列出分支列表,当前所在分支前有符号*
+
+git checkout 分支名----切换到分支
+
+
+
+> git的远程仓库，git允许有多个远程仓库;
+
+git remote---列出远程仓库别名列表，默认origin
+
+git remote -v -------远程所有远程仓库url
+
+git remote add 别名 url -------新增一个远程仓库
+
+
+
+git clone URL 复制一个项目
+
+git add . （或者git add 文件名, ,代表所有修改）将修改添加到索引区;
+
+git add fileName，将指定文件的修改添加到索引区;
+
+不小心add . 加错了怎么办:
+
+git rm --cached <added_file_to_undo>
+
+如需撤销文件夹加上-r
+git rm -r --cached <added_file_to_undo>
+
+
+git status 查看当前工作状态，哪些文件做了修改等等;
+
+git commit -m '修改日志' -------将索引区的修改提交到本地版本库
+
+git rebase 用来合并commit 一般在自己的开发分支进行，需要合并代码之前最好将自己的commit进行合并，方面将来cherrypick某一个commit
+
+git push [远程仓库别名 本地分支:远程分支] ----推送到远程仓库，默认是推送到origin仓库的同名分支;
+
+git pull [origin master] --rebase -----------更新远程仓库的内容到本地仓库，默认是更新origin仓库的同名分支，git pull命令实际包含git fetch和git merge两个命令;
+
+git log ------查看commit记录
+
+git checkout 文件名 ---------还原工作区对某文件的修改
+
+git checkout 分支名 ---------切换分支
+
+git reset ----------放弃索引区的修改
+
+git reset commit id(通过git log获取commit id) -----还原到 commit id
+
+git cherry pick 是拉取某一个单个更改的版本
+
+git cherry 常常配合着 git rebase -i 一起来用，后者是用来合并commit的，然后再用cherry pick来获取想要的commit
+
+
+> git stash是个暂存命令，使用情况案例:
+
+1. 你当前工作区的源代码是可以生成正常运行的版本的。
+
+2. 然后在1的代码上做修改，但是改到了一半，还没完成，不能正常工作也不能提交。
+
+3.这时候测试说有个比较紧急的bug要修复，而且这个bug你衡量是可以很快解决的。
+
+4. 这时候就可以使用git stash，把当前还没commit的改动暂存起来。
+
+5.暂存后，工作区的内容会变成只有已经commit的内容.然后开始修复3步骤中的bug，修复完提交。
+
+6.继续你之前还未完成的工作，这时候要从缓存区里把之前做了一半的代码取出来，使用命令git stash apply,默认是将id为0的快照应用到工作区;
+
+7. git stash可以保存多个快照,可以通过git stash list查看,从中选择你想要pop的stash，运行命令git stash pop stash@{id}或者 git stash apply stash@{id}即可,
+
+pop会删除快照，apply则不删除
+
+git新建之后远端有merge，本地也有不相关的merge
+
+这个时候需要这一句
+
+git pull --allow-unrelated-histories
+
+
+> 打 tag 标签
+
+git tag -a v1.0 -m 'commit version 1.0'
+
+加上 -f 覆盖原有的tag
+
+git tag -f v1.0
+
+删除本地tag
+
+git tag -d v1.1
+
+删除远程tag
+
+git push origin :v1.1 或者 git push origin --delete tag V1.1
+
+git config --global user.name "用户名" 更改用户名
+
+git 注册用户，如何获取ssh 更改token 获取密钥，使用密钥
+
+如何获取生成ssh key
+
+ssh-keygen -t rsa -C "GitLab" -b 4096
+
+然后绑定账号，添加秘钥即可
+
+> 关于现在的项目管理方式。
+
+新建项目新建一个develop分支，一个online分支，online 分之是最后要上线的分支develop分支是平时测试代码的分支，有新任务时新建一个任务分支分支名为任务号，开发完成之后合并到develop分支，然后再合到online分支，然后再将任务分支删掉

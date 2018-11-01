@@ -1,0 +1,66 @@
+---
+title : 让一个矩形根据键盘上下左右移动
+layout: post
+date:   2015-09-11 20:30:43
+categories: 技术文章
+---
+
+###  怎样让一个矩形上下左右键盘移动
+
+*  w 87 a 65  s 83 d 68
+*  up 38 right 37 down 40 right 39
+
+
+```
+var obox = document.getElementsByTagName('div');
+
+document.onkeydown = function(event){
+    mover(event);
+}
+
+function mover(event){
+    clearTimeout(timer);
+    var evt = event || window.event;
+    //console.log(evt.which || evt.keyCode)
+    var speed =19;
+    var timer = setTimeout(function(code){
+        var code = evt.which || evt.keyCode;
+        // clearInterval(timer);
+        //console.log(code)
+        // console.log(code)
+        switch (code){
+            case 87:obox[0].style.top = obox[0].offsetTop - speed + "px";break;
+            case 65:obox[0].style.left = obox[0].offsetLeft -speed + "px";break;
+            case 83:obox[0].style.top = obox[0].offsetTop + speed + "px";break;
+            case 68:obox[0].style.left = obox[0].offsetLeft + speed + "px";break;
+
+            case 38:obox[0].style.top = obox[0].offsetTop - speed + "px";break;
+            case 37:obox[0].style.left = obox[0].offsetLeft -speed + "px";break;
+            case 40:obox[0].style.top = obox[0].offsetTop + speed + "px";break;
+            case 39:obox[0].style.left = obox[0].offsetLeft + speed + "px";break;
+        }
+    for(var i = obox.length - 1 ; i > 0 ; i --){
+        obox[i].style.left = obox[i-1].offsetLeft + "px";
+        obox[i].style.top = obox[i-1].offsetTop + "px";
+        obox[i].style.background = randomColor();
+    }
+
+    },1)
+
+}
+function randomColor(){//随机颜色值
+        var arr = [1,2,3,4,5,6,7,8,9,0,"A","B","C","D","E","F"];
+        var res = "#";
+        for(var i = 0 ; i < 6; i++){
+            res += arr[parseInt(Math.random()*16)]
+        }
+        return res;
+
+    }
+
+// function getKey(event){//测试鼠标键值的函数
+//     var evt = event || window.event;
+//     console.log(evt.which || evt.keyCode)
+//     return evt.which || evt.keyCode
+// }   
+```
