@@ -40,7 +40,8 @@ categories: 技术文章
 
 
 因为任何的这些操作可能会安排更多的操作，并且新的事件在轮询阶段被内核插入队列，轮询事件可以被插入队列
-当轮询事件被执行的时候。结果，长时间执行的回调会允许轮询阶段会被允许比定时器的时间更长。更多详情请查看timers和poll的相关章节。
+
+当轮询事件被执行的时候。结果，长时间执行的回调会允许轮询阶段会被允许比定时器的时间更长。更多详情请查看[timers](https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/#timers)和[poll](https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/#poll)的相关章节。
 
 
 注意：在实际调用中，windows 和Unix和Linux系统会有很小的差异，但是对此次示范操作无关紧要，最重要的地方在这儿。有实际上有七八个步骤但是我们实际关心的也就是nodejs实际上使用的是上面的那些。
@@ -395,3 +396,6 @@ myEmitter.on('event', () => {
 
 
 原文链接：https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/
+
+
+参考：http://www.ruanyifeng.com/blog/2013/10/event_loop.html
